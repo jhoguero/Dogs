@@ -1,0 +1,21 @@
+.temperament-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.button-temperament {
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: white;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 3px;
+}
+
+.button-temperament:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #8692eb;
+}

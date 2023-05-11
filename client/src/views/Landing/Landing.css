@@ -1,0 +1,50 @@
+.styleBotton{
+    width: 147px;
+    margin-top: 60px;
+    background: rgba(0,0,0,.3);
+	border: solid 1px #FFF;
+	color: #dfd3d3a1;
+	font-size: .9rem;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: .3px;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 15px 40px;
+	display: inline-block;
+	border-radius: 10px;
+	user-select: none;
+	cursor: pointer;
+	transition: .13s ease-in-out; 
+}
+
+.styleBotton:hover{
+    background-color: rgba(228, 243, 242, 0.21);
+	border-color: rgb(168, 168, 244);
+	color: #000; 
+}
+
+.landing-wrapper{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	background-image: url("../../assets/landingDog.jpg");
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 345px;
+    align-items: center;
+}
+
+.logoDog{
+    width: 345px;
+}

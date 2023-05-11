@@ -1,0 +1,69 @@
+.detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 8%;
+}
+
+.container-detail {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255,255,255);
+    background: linear-gradient(63deg, rgba(255,255,255,0.7167659300048144) 19%, rgb(10, 247, 255) 100%);
+    border: 3px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 2%;
+    width: 40%;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.dog-img {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 1px 0px 5px 1px rgb(139, 139, 139);
+}
+
+.info-dog {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.temperament-name {
+    display: flex;
+    gap: 5px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.dog-name {
+    font-size: 35px;
+}
+
+.to-home {
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    padding: 5px;
+    margin: 3px;
+    width: 100px;
+}
+
+.to-home:hover {
+    cursor: pointer;
+    color: rgb(221, 140, 140);
+    background-color: rgb(252, 251, 243);
+    border-color: white;
+}
