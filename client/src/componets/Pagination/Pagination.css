@@ -10,5 +10,10 @@
 .button-pagination:hover {
     cursor: pointer;
     color: white;
-    background-color: #3baacd;
+    background-color: #aed903;
+}
+
+.pag-container {
+    display: flex;
+    justify-content: center;
 }

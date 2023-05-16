@@ -1,5 +1,12 @@
 .main-container {
     background-image: url("../../assets/fondoDogs.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pag-card {
+    width: 85%;
 }

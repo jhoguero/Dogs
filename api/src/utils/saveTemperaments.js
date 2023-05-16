@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { Temperaments } = require('../db');
+const { temperament } = require('../db');
 const { API_KEY } = process.env;
 
 
@@ -19,7 +19,7 @@ module.exports = async () => {
         name:t
       }
     })
-    await Temperaments.bulkCreate(allTemperaments); // se guarda en los temperamentos en la base de datos
+    await temperament.bulkCreate(allTemperaments); // se guarda en los temperamentos en la base de datos
   } catch (error) {
     //En caso de error lo lanzo al próximo catch
     console.error(error.message);

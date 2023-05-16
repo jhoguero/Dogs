@@ -3,7 +3,7 @@
     height: 320px;
     margin: 30px;
     background-color: #fefefe;
-    box-shadow: 1px 0px 20px 1px rgb(0, 153, 135);
+    box-shadow: 1px 0px 20px 1px rgb(209, 149, 8);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
 .image {
     width: 40%;
     border-radius: 10px;
-    box-shadow: 1px 0px 5px 1px rgb(139, 139, 139);
+    box-shadow: 1px 0px 5px 1px rgb(105, 183, 228);
 }
   
 

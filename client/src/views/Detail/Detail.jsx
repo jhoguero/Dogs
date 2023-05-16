@@ -24,6 +24,9 @@ function DetailsPage() {
       };
     }, []); // array de dependencia
 
+    useEffect(() =>{
+      console.log(details)
+    }, [details])
   
     if (details.id) {
       return (
@@ -58,7 +61,12 @@ function DetailsPage() {
         </div>
       );
     } else {
-      return <h1>Loading...</h1>;
+      return (
+        <div className="container-loading">
+          <img src="https://i.gifer.com/Xqg8.gif" alt="perro" />
+          <h1>Loading...</h1>
+        </div>
+      );
     }
   }
   

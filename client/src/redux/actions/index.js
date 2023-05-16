@@ -8,6 +8,7 @@ export const GET_DETAILS = "GET_DETAILS";
 export const CLEAN_DETAILS = "CLEAN_DETAILS";
 export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 export const TEMPERAMENT_FILTER = 'TEMPERAMENT_FILTER';
+export const FILTER_DOG = "FILTER_DOG";
 
 
 export function getDogs() {
@@ -61,3 +62,7 @@ export function getDogs() {
   export const temperamentFilter = (filter) => {
     return { type: TEMPERAMENT_FILTER, payload: filter };
   };
+
+  export const filterDog = (filterName) => {
+    return { type: FILTER_DOG, payload: filterName };
+  }

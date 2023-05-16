@@ -1,12 +1,12 @@
 
-const { Temperaments } = require("../db");
+const { temperament } = require("../db");
 
 
 
 module.exports = async (req, res) => {
   try {
     //Invoco el método 'findAll' del modelo 'Temperaments' para traer todos los temperamentos desde la base de datos
-    const allTemperaments = await Temperaments.findAll();
+    const allTemperaments = await temperament.findAll();
    
     res.status(200).json(allTemperaments);
   } catch (error) {

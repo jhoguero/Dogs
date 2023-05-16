@@ -25,7 +25,7 @@ const HomePage = () => {
   }
 
   function handleSubmit(e) {
-    e.preventDefault(); // para que refresque la pagina al momento de la busqueda
+    e.preventDefault(); // para que no refresque la pagina al momento de la busqueda
     setPage(0)   // reinicia paginado al momento de hacer la busqueda
     
     dispatch(getByname(searchString)); // va buscar por el string que dispara el evento
@@ -52,13 +52,14 @@ const HomePage = () => {
         setPage={setPage} 
         handleSubmit={handleSubmit}
         handleClear={handleClear}
+        searchString = {searchString}
       />
       <section className="main-container">
-        <Cards allDogs={allDogs} />
-        <Pagination page={page} perpage={PER_PAGE} handlePage={handlePage} />
-        <div>
+        <section className="container-pag-card">
+          <Pagination page={page} perpage={PER_PAGE} handlePage={handlePage} />
+          <Cards allDogs={allDogs} />
+        </section>
           <TemperamentsFilter setPage={setPage} />
-        </div>
       </section>
     </>
   );

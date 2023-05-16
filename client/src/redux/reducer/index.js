@@ -8,6 +8,7 @@ import {
   GET_DETAILS,
   CLEAN_DETAILS,
   GET_TEMPERAMENTS,
+  FILTER_DOG,
   TEMPERAMENT_FILTER
 } from "../actions";
 
@@ -18,6 +19,7 @@ let initialState = {
   dogCopy: [],
   dogOrder: [],
   details: {},
+  filter: "all",
   temperaments: []
 }; //objetos
 
@@ -42,7 +44,7 @@ function rootReducer(state = initialState, action) {
       };
       case CLEAR_SEARCH:
     return {...state,
-        allDogs: state.dogOrder
+        allDogs: state.dogCopy
     }
     case GET_DETAILS:
       return {
@@ -70,6 +72,40 @@ function rootReducer(state = initialState, action) {
           filter: action.payload,
           allDogs: state.dogCopy.filter((d) => {
             return d.temperament.filter((t) => t === action.payload).length;
+          }),
+        };
+      }
+
+      case FILTER_DOG:
+      if (action.payload === "aToZ") {
+        return {
+          ...state,
+          allDogs: [...state.dogCopy].sort((a, b) =>
+            a.name.localeCompare(b.name)
+          ),
+        };
+      }
+      if (action.payload === "zToA") {
+        return {
+          ...state,
+          allDogs: [...state.dogCopy]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .reverse(),
+        };
+      }
+      if (action.payload === "weightDesc") {
+        return {
+          ...state,
+          allDogs: [...state.dogCopy].sort((a, b) => {
+           return a.weight.split(" - ")[1] - b.weight.split(" - ")[1]
+          }),
+        };
+      }
+      if (action.payload === "weightAsc") {
+        return {
+          ...state,
+          allDogs: [...state.dogCopy].sort((a, b) => {
+           return b.weight.split(" - ")[1] - a.weight.split(" - ")[1]
           }),
         };
       }

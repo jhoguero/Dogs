@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./views/Landing/Landing";
 import HomePage from "./views/Home/Home";
-import CreatePage from "./views/CreateDog/CreateDog";
+import CreateDog from "./componets/CreateDog/CreateDog";
 import DetailsPage from "./views/Detail/Detail";
 
 
@@ -18,7 +18,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/home" component={HomePage} />
-            {/* <Route exact path="/creaDog" component={CreatePage} /> */}
+            <Route exact path="/createDog" component={CreateDog} />
             <Route exact path="/details/:id" component={DetailsPage} />
           </Switch>
         </div>

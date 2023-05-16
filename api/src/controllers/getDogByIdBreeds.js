@@ -1,9 +1,9 @@
 const axios = require('axios')
 const { API_KEY } = process.env;
-const { Temperaments, Dog } = require('../db');
+const { temperament, Dog } = require('../db');
 const isUUID = require ('../utils/isUUID')
 
-
+//  getDogByIdBreeds PARA EL LLAMADO DE DETAILS
 
 module.exports = async (req, res) => {
     const {id} = req.params;
@@ -11,17 +11,27 @@ module.exports = async (req, res) => {
     if (isUUID(id)){
         try{
           // findBypk el cual busca por PK del ids
-            const dbDogById = await Dog.findByPk(id, {
+            const rawDbDogById = await Dog.findByPk(id, {
                 include: [{
-                  model: Temperaments,
+                  model: temperament,
                   attributes: ['name'],
                   through: {
                     attributes: []  // tabla intermedia vacia
                   }
                 }] 
         })
-        if (!dbDogById) throw new Error('Dog not found!')
-
+        if (!rawDbDogById) throw new Error('Dog not found!') // formatea la data para que llegue igual que los datos de la api
+          const dbDogById = {
+            id: rawDbDogById.dataValues.id,
+            name: rawDbDogById.dataValues.name,
+            height: rawDbDogById.dataValues.height,
+            weight: rawDbDogById.dataValues.weight,
+            life_span: rawDbDogById.dataValues.life_span,
+            image: rawDbDogById.dataValues.image,
+            temperament: rawDbDogById.dataValues.temperaments.map(t => t.name)
+            
+          }
+          
         res.status(200).json(dbDogById);
     }   catch(error){
         res.status(404).json({ error: error.message });

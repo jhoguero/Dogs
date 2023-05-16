@@ -2,8 +2,10 @@ import React from "react";
 import logo from "../../assets/logoDogs.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import Ordenator from "../Ordenator/Ordenator";
 
-const Header = ({handleChange, handleSubmit, handleClear} ) => {
+
+const Header = ({handleChange, handleSubmit, handleClear, setPage, searchString} ) => {
   return (
     <div className="header is-primary">
       <a href="/home" className="header-item">
@@ -15,6 +17,7 @@ const Header = ({handleChange, handleSubmit, handleClear} ) => {
             placeholder="Busqueda"
             type="search"
             className="input-search"
+            value={searchString}
           />
           <button type="submit" onClick={handleSubmit} className="button">
             BUSCAR
@@ -26,6 +29,7 @@ const Header = ({handleChange, handleSubmit, handleClear} ) => {
         <Link to={`/createDog`}>
           <button className="button">CREATE DOG</button>
         </Link>
+        <Ordenator setPage={setPage}/>
       </div>
     </div>
   );

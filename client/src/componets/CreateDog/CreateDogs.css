@@ -1,0 +1,49 @@
+.input-create {
+    margin-top: 30px;
+    height: 20px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.form-create {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: rgb(255,255,255);
+    background: linear-gradient(63deg, rgba(255,255,255,0.7167659300048144) 19%, rgba(255,216,10,1) 100%);
+}
+
+.temperaments-checkbox {
+    margin-top: 20px;
+}
+
+.check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.buttons-create {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.img-dog {
+    width: 30%;
+}
+
+.create-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 2%;
+    background-image: url(../../assets/fondoDetail.jpg);
+    background-size: cover;
+}

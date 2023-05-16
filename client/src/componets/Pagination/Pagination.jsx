@@ -24,7 +24,7 @@ const Pagination = ({ handlePage, page, perpage }) => {
   }, [count]);
 
   return (
-    <div>
+    <div className="pag-container">
       {page > 0 && (
         <button onClick={() => handlePage(page - 1)} className="button-pagination">&#9664;</button>
       )}

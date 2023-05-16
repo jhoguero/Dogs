@@ -6,7 +6,9 @@ module.exports = async (req, res) =>{
       const newDog = await Dog.create(req.body);
       console.log(req.body)
      
-      await newDog.setTemperaments(req.body.Temperaments);
+      await newDog.addTemperaments(req.body.temperament);
+
+      
       
 
       res.status(201).json({

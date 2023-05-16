@@ -1,6 +1,6 @@
 const { Op } = require('sequelize');
 const axios = require('axios');
-const { Temperaments, Dog } = require('../db');
+const { temperament, Dog } = require('../db');
 const { API_KEY } = process.env;
 
 
@@ -13,10 +13,10 @@ module.exports = async (req, res) => {
       const name = req.query.name.toLowerCase();
       try {
         //Empleo el método 'findAll' junto con el operador 'Op.like' de sequelize para buscar por nombre en base de datos y defino los atributos y relaciones con el modelo 'temperamentos' para que la búsqueda coincida con el requerimiento del front
-        const dbSearchByName = await Dog.findAll({
-          attributes: ['id', 'image', 'name'],
+        const rawDbSearchByName = await Dog.findAll({
+          attributes: ['id', 'image', 'name', "weight"],
           include: [{
-            model: Temperaments,
+            model: temperament,
             attributes: ['name'],
             through: {
               attributes: []
@@ -28,10 +28,21 @@ module.exports = async (req, res) => {
             }
           }
         });
+
+        const dbSearchByName = rawDbSearchByName.map(d => {
+          return {
+              id: d.dataValues.id,
+              name: d.dataValues.name,
+              height: d.dataValues.height,
+              weight: d.dataValues.weight,
+              life_span: d.dataValues.life_span,
+              image: d.dataValues.image,
+              temperament: d.dataValues.temperaments.map(t => t.name)
+          }
+        })
         //Respuesta de la ruta en caso de encontrar en base de datos
-        console.log(dbSearchByName.length)
         if(dbSearchByName.length > 0){
-          return res.status(200).json(dbSearchByName[0]);
+          return res.status(200).json(dbSearchByName);
         }
         ////API
         //Llamado de axios a 'thedogapi.com' con 'name' como endpoint para buscar en API en caso de no encontrar en base de datos
@@ -50,7 +61,7 @@ module.exports = async (req, res) => {
           
         })
         
-        res.status(200).json(apiSearchByName);
+        res.status(200).json([...dbSearchByName, ...apiSearchByName]); // concatena los perros creados y no pise la con la busqueda
       } catch (error) {
         
         res.status(404).json({ error: error.message });

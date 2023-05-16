@@ -5,13 +5,15 @@
     align-items: center;
     gap: 30px;
     padding: 8%;
+    background-image: url(../../assets/fondoDetail.jpg);
+    background-size: cover;
 }
 
 .container-detail {
     display: flex;
     flex-direction: column;
     background: rgb(255,255,255);
-    background: linear-gradient(63deg, rgba(255,255,255,0.7167659300048144) 19%, rgb(10, 247, 255) 100%);
+    background: linear-gradient(63deg, rgba(255,255,255,0.7167659300048144) 19%, rgb(255, 173, 10) 100%);
     border: 3px solid black;
     border-radius: 10px;
     color: rgb(0, 0, 0);
@@ -66,4 +68,10 @@
     color: rgb(221, 140, 140);
     background-color: rgb(252, 251, 243);
     border-color: white;
+}
+
+.container-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
