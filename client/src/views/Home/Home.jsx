@@ -19,6 +19,7 @@ const HomePage = () => {
     
 
   const [searchString, setSearchString] = useState(""); //seteo de la busqeda de dogs
+  const [active, setActive] = useState (false);
 
   function handleChange(e) {
     setSearchString(e.target.value); // setea el target value de la busqueda
@@ -34,7 +35,10 @@ const HomePage = () => {
 
   function handlePage(pag) {
     setPage(pag);
+    setActive(true);
   }
+
+  
 
   function handleClear() {
     setPage(0)

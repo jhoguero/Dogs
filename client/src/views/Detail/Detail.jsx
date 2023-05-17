@@ -31,11 +31,6 @@ function DetailsPage() {
     if (details.id) {
       return (
         <div className="detail-wrapper">
-          <div>
-            <Link to={`/home`}>
-              <button className="to-home">HOME</button>
-            </Link>
-          </div>
           <div className="container-detail">
             <section className="img">
               <img
@@ -57,6 +52,11 @@ function DetailsPage() {
                 <p>Life_span: {details.life_span}</p>
               </div>
             </section>
+            <div>
+              <Link to={`/home`}>
+                <button className="button">HOME</button>
+              </Link>
+          </div>
           </div>
         </div>
       );

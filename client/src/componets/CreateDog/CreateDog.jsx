@@ -90,13 +90,14 @@ function CreateDog() {
   return (
     <div className="create-wrapper">
       <form onSubmit={handleSubmit} className="form-create">
-        <div>
+        <div className="img-container">
           <img
             src="https://img2.freepng.es/20180330/qge/kisspng-dog-puppy-silhouette-clip-art-bone-dog-5abe49d6e6fc19.0846729215224201829461.jpg"
             alt="dog"
             className="img-dog"
           />
         </div>
+        <section className="create-info">
         <div>
           <label> Name</label>
           <input
@@ -182,6 +183,8 @@ function CreateDog() {
             <label>&nbsp;</label>
           )}
         </div>
+        </section>
+        
         <div className="temperaments-checkbox">
           <label> Temperament:</label>
           {errors.temperaments ? (
@@ -209,9 +212,10 @@ function CreateDog() {
             disabled={disabler || Object.entries(errors).length ? true : false}
             value="Create"
             type="submit"
+            className="button"
           />
           <Link to={`/home`}>
-            <button>Home</button>
+            <button className="button">Home</button>
           </Link>
         </div>
       </form>

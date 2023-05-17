@@ -11,14 +11,14 @@ function Card ({dog}) {
             <div className="img-container">
                 <img src={image} alt="imagenDog" className="image"/>
             </div>
-            <div className="info">
-               <h2>{name.toUpperCase()}</h2> 
-               <p>
+            <div className="card-info">
+               <h2 className="card-title">{name.toUpperCase()}</h2> 
+               <p className="card-subtitle">
                 {temperament?.map((t)=>{
                     return t ;
                 }).join(", ")}
                </p>
-               <p>
+               <p className="card-subtitle">
                {weight.toUpperCase() + " " + "Kg"}
                </p>
             </div>

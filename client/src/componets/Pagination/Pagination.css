@@ -1,19 +1,5 @@
-.button-pagination {
-    background-color: transparent;
-    border-radius: 5px;
-    border-color: white;
-    color: rgb(9, 9, 9);
-    padding: 5px;
-    margin: 3px;
-}
-
-.button-pagination:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #aed903;
-}
-
 .pag-container {
     display: flex;
     justify-content: center;
 }
+

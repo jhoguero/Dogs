@@ -13,6 +13,7 @@ const Ordenator = ({ setPage }) => {
     }
 
   
+    
 
   return (
     <div className='sort'>

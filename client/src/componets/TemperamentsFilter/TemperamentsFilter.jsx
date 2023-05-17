@@ -28,7 +28,7 @@ const TemperamentsFilter = ({ setPage }) => {
             onClick={() =>
               filter === t.name? handleFilter("all") : handleFilter(t.name)}
             
-            className='button-temperament'
+            className='button'
           >
             {t.name.toUpperCase()}
           </button>
