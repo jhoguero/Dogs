@@ -32,7 +32,7 @@ function rootReducer(state = initialState, action) {
     case GET_DOGS:
       return {
         ...state,
-        allDogs: action.payload, // devuelve una araid con todos los pokemon
+        allDogs: action.payload, // devuelve una araid con todos los perros
         dogCopy: action.payload, // la copia del filtrado y no alterar el original
         dogOrder: action.payload,
       };
@@ -57,7 +57,7 @@ function rootReducer(state = initialState, action) {
     };
 
     case GET_TEMPERAMENTS:
-      return { ...state, temperaments: action.payload.slice(0, 20) };
+      return { ...state, temperaments: action.payload.slice(0, 20) }; // se ponen hasta 20 temperamentos ya que por defecto son 120
 
     case TEMPERAMENT_FILTER:
       if (action.payload === "all") {
